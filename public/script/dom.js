@@ -2,6 +2,8 @@ const formBlock = document.getElementById('addForm');
 const btn = document.getElementById('addTaskButton');
 
 btn.addEventListener = ('click', () => {
+  console.log(formBlock)
+  console.log(btn)
   formBlock.style.display = 'block';
 });
 cancel.onclick = (e) => {
@@ -64,5 +66,3 @@ const createTasksBox = (data) => {
     listDiv.appendChild(task);
   });
 };
-
-createTasksBox(data);
