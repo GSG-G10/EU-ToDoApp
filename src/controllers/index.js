@@ -1,6 +1,7 @@
 const { clientError, serverError } = require('./error');
+const  {getTask} = require('./getTask');
 module.exports = {
-    getTask : require('./getTask'),
-    clientError : clientError,
-    serverError : serverError
+    getTask,
+    clientError,
+   serverError
 }
