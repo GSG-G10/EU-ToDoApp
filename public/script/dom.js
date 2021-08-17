@@ -1,10 +1,9 @@
 const formBlock = document.getElementById('addForm');
 const btn = document.getElementById('addTaskButton');
-const cancel = document.getElementById('cancel');
 
-btn.onclick = () => {
+btn.addEventListener = ('click', () => {
   formBlock.style.display = 'block';
-};
+});
 cancel.onclick = (e) => {
   e.preventDefault();
   formBlock.style.display = 'none';

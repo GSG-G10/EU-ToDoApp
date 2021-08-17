@@ -4,8 +4,8 @@
   "description": "ToDo web App",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=production node Src/index.js",
-    "dev": "NODE_ENV=development nodemon Src/index.js",
+    "start": "NODE_ENV=production node src/index.js",
+    "dev": "NODE_ENV=development nodemon src/index.js",
     "test": "NODE_ENV=test jest"
   },
   "repository": {
