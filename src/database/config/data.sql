@@ -12,7 +12,7 @@ CREATE TABLE tasks (
   id SERIAL PRIMARY KEY,
   user_id INTEGER REFERENCES users(id),
   title VARCHAR(255) NOT NULL,
-  task_description VARCHAR(255) NOT NULL,
+  task_description VARCHAR(255) ,
   due_time DATE NOT NULL,
   completed BOOLEAN DEFAULT FALSE
 );

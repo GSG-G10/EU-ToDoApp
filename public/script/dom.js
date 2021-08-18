@@ -1,16 +1,15 @@
 const formBlock = document.getElementById('addForm');
 const btn = document.getElementById('addTaskButton');
-const cancel = document.getElementsByClassName('cancel');
 const listDiv = document.getElementById('tasksDiv');
 
 btn.onclick = () => {
   formBlock.style.display = 'block';
 };
-cancel.onclick = (e) => {
-  e.preventDefault();
-  formBlock.style.display = 'none';
+window.onclick = (e) => {
+  if (e.target === formBlock) {
+    formBlock.style.display = 'none';
+  }
 };
-
 const createTasksBox = (data) => {
   data.forEach((element) => {
     const task = document.createElement('section');
@@ -26,7 +25,8 @@ const createTasksBox = (data) => {
     const checkBox = document.createElement('input');
     checkBox.type = 'checkbox';
     checkBox.className = 'check checkbox-effect checkbox-effect-4';
-    element.completed == false ? checkBox.checked = false : checkBox.checked = true;
+    // eslint-disable-next-line no-unused-expressions
+    element.completed === false ? checkBox.checked = false : checkBox.checked = true;
     left.append(checkBox);
     const nameSec = document.createElement('section');
     const name = document.createTextNode(element.title);
@@ -46,10 +46,6 @@ const createTasksBox = (data) => {
 
     left.append(taskData);
 
-    const idLabel = document.createElement('label');
-    idLabel.className = 'idLabel';
-    idLabel.textContent = element.id;
-
     const edit = document.createElement('button');
     edit.className = 'btn edit-btn';
     const icon = document.createElement('i');
@@ -61,7 +57,7 @@ const createTasksBox = (data) => {
     const icon2 = document.createElement('i');
     icon2.className = 'task-icon fas fa-trash';
     remove.append(icon2);
-    right.append(idLabel, edit, remove);
+    right.append(edit, remove);
     task.append(left, right);
     listDiv.appendChild(task);
   });
