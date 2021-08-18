@@ -1,4 +1,11 @@
 const router = require('express').Router();
-const {getTask} = require('../controllers/index');
-// this route after the user make a login, it will go to the forExample /elham/tasks
-router.get("/:userName/tasks",getTask )
+const {
+  clientError, serverError, getTask, addTask,
+} = require('../controllers');
+
+router.get('/admin/tasks', getTask);
+router.post('/addTask', addTask);
+router.use(clientError);
+router.use(serverError);
+
+module.exports = router;
