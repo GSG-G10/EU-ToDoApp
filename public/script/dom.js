@@ -1,11 +1,11 @@
 const formBlock = document.getElementById('addForm');
 const btn = document.getElementById('addTaskButton');
+const cancel = document.getElementsByClassName('cancel');
+const listDiv = document.getElementById('tasksDiv');
 
-btn.addEventListener = ('click', () => {
-  console.log(formBlock)
-  console.log(btn)
+btn.onclick = () => {
   formBlock.style.display = 'block';
-});
+};
 cancel.onclick = (e) => {
   e.preventDefault();
   formBlock.style.display = 'none';
@@ -28,21 +28,21 @@ const createTasksBox = (data) => {
     checkBox.className = 'check checkbox-effect checkbox-effect-4';
     element.completed == false ? checkBox.checked = false : checkBox.checked = true;
     left.append(checkBox);
-    const name_sec = document.createElement('section');
+    const nameSec = document.createElement('section');
     const name = document.createTextNode(element.title);
-    name_sec.className = element.completed ? 'task-name-checked' : 'task-name';
-    name_sec.append(name);
+    nameSec.className = element.completed ? 'task-name-checked' : 'task-name';
+    nameSec.append(name);
 
-    const due_sec = document.createElement('section');
+    const dueSec = document.createElement('section');
     const due = document.createElement('input');
     due.type = 'datetime-local';
     due.value = element.due_time;
     due.readOnly = true;
     due.className = 'due';
-    due_sec.className = 'due-date';
-    due_sec.append(due);
+    dueSec.className = 'due-date';
+    dueSec.append(due);
 
-    taskData.append(name_sec, due_sec);
+    taskData.append(nameSec, dueSec);
 
     left.append(taskData);
 
@@ -66,3 +66,10 @@ const createTasksBox = (data) => {
     listDiv.appendChild(task);
   });
 };
+const getData = () => {
+  fetch('/getTask')
+    .then((data) => data.json())
+    .then((data) => createTasksBox(data))
+    .catch((err) => err);
+};
+getData();

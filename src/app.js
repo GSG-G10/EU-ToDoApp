@@ -1,8 +1,9 @@
 const express = require('express');
 const { join } = require('path');
 const compression = require('compression');
+require('env2')('config.env');
 
-const routes = require('./routes');
+const routes = require('./routers');
 
 const app = express();
 app.set('PORT', process.env.PORT || 7070);
