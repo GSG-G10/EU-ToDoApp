@@ -12,13 +12,16 @@ CREATE TABLE tasks (
   id SERIAL PRIMARY KEY,
   user_id INTEGER REFERENCES users(id),
   title VARCHAR(255) NOT NULL,
-  task_description VARCHAR(255) ,
   due_time DATE NOT NULL,
   completed BOOLEAN DEFAULT FALSE
 );
 INSERT INTO users (name, email, password)
 VALUES ('Muhammed', 'a@gmail.com', '1234');
 
-INSERT INTO tasks (user_id, due_time, title, task_description)
-VALUES (1, '10/10/2020', 'DOne', 'Done');
+INSERT INTO tasks (user_id, due_time, title)
+VALUES (1, '20/8/2021', 'Do Math HW');
+
+INSERT INTO tasks (user_id, due_time, title)
+VALUES (1, '21/8/2021', 'Meeting with Selvina');
+
 COMMIT;

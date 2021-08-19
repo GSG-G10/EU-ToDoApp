@@ -21,29 +21,17 @@ body {
   margin: 40px 5vw 10px 5vw;
   font-family: 'Rubik', sans-serif;
 }
-
+.header{
+  width: 100%;
+  display: flex;
+  justify-content:space-between;
+  align-items: baseline;
+}
 .topHeader {
+  width: 45%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin: 0vw 5vw;
-}
-
-.unDoneBox,
-.doneBox {
-  display: flex;
-  justify-content: stretch;
-  align-items: center;
-  color: white;
-}
-
-.icon1 {
-  font-size: 35px;
-}
-
-.doneCount,
-.unDoneCount {
-  font-size: 30px;
 }
 
 .space {

@@ -33,16 +33,7 @@ const createTasksBox = (data) => {
     nameSec.className = element.completed ? 'task-name-checked' : 'task-name';
     nameSec.append(name);
 
-    const dueSec = document.createElement('section');
-    const due = document.createElement('input');
-    due.type = 'datetime-local';
-    due.value = element.due_time;
-    due.readOnly = true;
-    due.className = 'due';
-    dueSec.className = 'due-date';
-    dueSec.append(due);
-
-    taskData.append(nameSec, dueSec);
+    taskData.append(nameSec);
 
     left.append(taskData);
 

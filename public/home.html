@@ -8,42 +8,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-    href="https://fonts.googleapis.com/css2?family=Actor&display=swap"
-    rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Actor&display=swap"
+      rel="stylesheet"
     />
     <link rel="stylesheet" href="css/home.css" />
     <script
-    src="https://kit.fontawesome.com/52e67ff79e.js"
-    crossorigin="anonymous"
+      src="https://kit.fontawesome.com/52e67ff79e.js"
+      crossorigin="anonymous"
     ></script>
-    <link rel="icon" href="assets/true.png">
-    <title>To Do </title>
-</head>
+    <link rel="icon" href="assets/true.png" />
+    <title>To Do</title>
+  </head>
 
   <body>
-    <section class="title">To Do List</section>
-    <section class="topHeader">
-      <div class="doneBox">
-        <i class="icon1 fas fa-check-circle"></i>
-        <h1 class="space"></h1>
-        <h1 id="doneCount"></h1>
-      </div>
+    <div class="header">
+      <section class="title">To Do List</section>
+      <section class="topHeader">
+        <button id="addTaskButton">Add Task</button>
+      </section>
+    </div>
 
-      <div class="unDoneBox">
-        <i class="icon1 fas fa-times-circle"></i>
-        <h1 class="space"></h1>
-        <h1 id="unDoneCount"></h1>
-      </div>
-
-      <button id="addTaskButton">Add Task</button>
-    </section>
-
-    <div id="addForm" class="popup-form " >
+    <div id="addForm" class="popup-form">
       <div class="form-content">
         <form class="form" method="post" action="/addTask">
           <section class="form-element">
             <label for="task_name" class="pop-label">Task name</label>
-            <input type="text" id="task_name" name="task_name" class="field" />
+            <input type="text" id="task_name" name="taskName" class="field" />
           </section>
 
           <section class="form-element">
@@ -51,17 +41,7 @@
             <input
               type="datetime-local"
               id="due_time"
-              name="due_time"
-              class="field"
-            />
-          </section>
-
-          <section class="form-element">
-            <label for="task_details" class="pop-label">Task details</label>
-            <input
-              type="text-area"
-              id="task_details"
-              name="task_details"
+              name="dueTime"
               class="field"
             />
           </section>

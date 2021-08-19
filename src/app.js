@@ -6,7 +6,7 @@ require('env2')('config.env');
 const routes = require('./routers');
 
 const app = express();
-app.set('PORT', process.env.PORT || 7070);
+app.set('PORT', process.env.PORT || 8080);
 app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
