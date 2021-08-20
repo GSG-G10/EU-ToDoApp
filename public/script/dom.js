@@ -10,6 +10,12 @@ window.onclick = (e) => {
     formBlock.style.display = 'none';
   }
 };
+const deleteTask = (id) => {
+  fetch(`/deleteTask/${id}`)
+    // eslint-disable-next-line no-restricted-globals
+    .then(location.reload())
+    .catch((err) => err);
+};
 const createTasksBox = (data) => {
   data.forEach((element) => {
     const task = document.createElement('section');
@@ -45,6 +51,9 @@ const createTasksBox = (data) => {
 
     const remove = document.createElement('button');
     remove.className = 'btn delete-btn';
+    remove.onclick = () => {
+      deleteTask(nameSec.textContent);
+    };
     const icon2 = document.createElement('i');
     icon2.className = 'task-icon fas fa-trash';
     remove.append(icon2);
